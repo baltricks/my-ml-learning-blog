@@ -1,13 +1,13 @@
 ---
 title: Creating this blog
-description: Why should I write this blog? - A GitHub Page for my blog
-toc: true
+description: Why do I write this blog? - A GitHub Page for my blog
+toc: false
 layout: post
 categories: [GitHub Page]
 
 ---
 
-## Why should I write this blog?
+## Why do I write this blog?
 
 As a developer I often feel how important it is 
 - to stay focused on my (or my companies) goals
