@@ -30,15 +30,17 @@ With this setting I was able to run the first prepared samples (image classifier
 
 ## What I've learned until now
 
-Each chapter of the book ends with a questionnaire which helps you checking your learning progress.
+Each chapter of the book ends with a questionnaire which helps you checking your learning progress. 
 
-I learned 
+I enjoy it. It's very useful.
 
-- about the main areas of deep learning
+Here are some topics:
+
+- the main areas of deep learning
 - a brief historical survey (from the first artificial neurons to **neuronal networks**)
 - **machine learning** as another way (other than writing a program) to let computers do their task - by learning from their experience (= **training**)
-- how training works
-- models create **predictions** coming from input data
+- a first idea how training works
+- **predictions** coming from input data
 - different types of models like **classification** and **regression**
 - the meaning of input data and its division into different data sets like a **training set** used as training input, **validation set** (or development set) to measure the accuracy of a model and optional a separate **test set** to test a model with never seen data
 - a lot new terms like **epoch**, **metric**, **loss**, **overfitting** ...
