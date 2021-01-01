@@ -24,7 +24,9 @@ From this point you can start adding and running your own (or copied) code and t
 
 > When rebuilding the first samples from the book I had to add following imports:
 > 
+```python
     from fastai.vision.widgets import widgets, PILImage
+```
 
 With this setting I was able to run the first prepared samples (image classifier and others) coming with the book.
 
