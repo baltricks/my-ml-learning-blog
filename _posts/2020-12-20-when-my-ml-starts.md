@@ -6,11 +6,11 @@ layout: post
 categories: [fastai, Google Colab]
 ---
 
-## An exciting book
+# An exciting book
 
 In late 2020 I came across *Deep Learning for Coders with fastai and PyTorch: AI Applications Without a PhD* by Jeremy Howard & Sylvain Gugger and I was directly inspired and excited to dive into deep learning. Deep Learning, Machine Learning, AI and all the other terms of artifical intelligence had been very unclear to me - even though I'd been working for many years as a software developer. But with this book I got the feeling that the door to this domain is now opened to me. Opened by authors with long lasting experience in coding and teaching AI. 
 
-## My coding environment
+# My coding environment
 
 Following the book coding should take place in Jupyter Notebooks. After looking around for the different ways to get own Jupyter Notebooks running I decided to start with Google Colab for my Notebooks. Although there are some issues to keep in mind:
 
@@ -28,7 +28,7 @@ From this point you can start adding and running your own (or copied) code and t
 
 With this setting I was able to run the first prepared samples (image classifier and others) coming with the book.
 
-## What I've learned until now
+# What I've learned until now
 
 Each chapter of the book ends with a questionnaire which helps you checking your learning progress. 
 
