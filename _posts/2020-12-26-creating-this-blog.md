@@ -15,7 +15,7 @@ As a developer I often feel how important it is
 - to see and remember the progress and not only what's missing
 - and to keep the balance between diving deeply into things on one side and reacting to upcoming needs on the other side
 
-So a great part of this work is just thinking and making decisions. And that's one reason to write this blog: **to keep myself on this road**.
+So a great part of this work is just thinking and making decisions. And that's one reason to write this blog: **It helps me to keep myself on this road**.
 
 And another important reason is my hope that this blog will one day **help others on their way**. Sharing content makes learning and development available for everybody. I benefit from this since years. 
 
