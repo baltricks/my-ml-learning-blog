@@ -3,7 +3,7 @@ title: When my ML learning starts
 description: An exciting book - My coding environment -  What I've learned until now
 toc: false
 layout: post
-categories: [fastai, google colab]
+categories: [fastai, Google Colab]
 ---
 
 ## An exciting book
