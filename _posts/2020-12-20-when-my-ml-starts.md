@@ -8,7 +8,7 @@ categories: [fastai, Google Colab]
 
 # An exciting book
 
-In late 2020 I came across *Deep Learning for Coders with fastai and PyTorch: AI Applications Without a PhD* by Jeremy Howard & Sylvain Gugger and I was directly inspired and excited to dive into deep learning. Deep Learning, Machine Learning, AI and all the other terms of artifical intelligence had been very unclear to me - even though I'd been working for many years as a software developer. But with this book I got the feeling that the door to this domain is now opened to me. Opened by authors with long lasting experience in coding and teaching AI. 
+In late 2020 I came across *Deep Learning for Coders with fastai and PyTorch: AI Applications Without a PhD* by Jeremy Howard ([@jeremyphoward](https://twitter.com/jeremyphoward)) & Sylvain Gugger ([@GuggerSylvain](https://twitter.com/GuggerSylvain)) and I was directly inspired and excited to dive into deep learning. Deep Learning, Machine Learning, AI and all the other terms of artifical intelligence had been very unclear to me - even though I'd been working for many years as a software developer. But with this book I got the feeling that the door to this domain is now opened to me. Opened by authors with long lasting experience in coding and teaching AI. 
 
 # My coding environment
 
