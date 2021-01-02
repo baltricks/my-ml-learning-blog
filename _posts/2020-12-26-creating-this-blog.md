@@ -8,6 +8,8 @@ comments: true
 
 ---
 
+{% include alert.html text="This post references a previous version of this blog created with GithHub Pages. It is still <a target="_blank" href="https://baltricks.github.io/my-ml-page/">online</a>" %}
+
 # Why do I write this blog?
 
 As a developer I often feel how important it is 
