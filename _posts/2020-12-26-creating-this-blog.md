@@ -4,6 +4,7 @@ description: Why do I write this blog? - A GitHub Page for my blog
 toc: false
 layout: post
 categories: [GitHub Page]
+comments: true
 
 ---
 
