@@ -24,8 +24,6 @@ And another important reason is my hope that this blog will one day **help other
 
 {% include alert.html text="This post references a previous version of this blog created with GithHub Pages. It's still <a target=\"_blank\" href=\"https://baltricks.github.io/my-ml-page/\">online here</a>" %}
 
-> It's still <a target="_blank" href="https://baltricks.github.io/my-ml-page/">online here</a>
-
 To keep things easy I decided to use [GitHub Pages](https://pages.github.com) for this blog. I created a new git repository on GitHub and choose the main branch as page source and the [cayman theme](https://github.com/pages-themes/cayman) as Jekyll theme. All this can be done in the *Settings / Github Pages* section of the repository.
 
 In this repository I created a directory structure for my future posts and made my adaptations in the *index.md* (as the home page of the blog) and *_config.yml* (the theme configuration). For layout customization I copied the *_layouts/default.html* from the [origin theme repository](https://github.com/pages-themes/cayman) into my repository and made my (minor) changes.
