@@ -22,7 +22,7 @@ And another important reason is my hope that this blog will one day **help other
 
 # A GitHub Page for my blog
 
-{% include alert.html text="This post references a previous version of this blog created with GithHub Pages. It's still <a target=\"_blank\" href=\"https://baltricks.github.io/my-ml-page/\">online here</a>" %}
+{% include alert.html text="This text references a previous version of this blog created with GithHub Pages. It's still <a target=\"_blank\" href=\"https://baltricks.github.io/my-ml-page/\">online here</a>" %}
 
 To keep things easy I decided to use [GitHub Pages](https://pages.github.com) for this blog. I created a new git repository on GitHub and choose the main branch as page source and the [cayman theme](https://github.com/pages-themes/cayman) as Jekyll theme. All this can be done in the *Settings / Github Pages* section of the repository.
 
