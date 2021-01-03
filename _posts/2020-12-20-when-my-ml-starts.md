@@ -48,5 +48,5 @@ Some of the main topics I took from the first chapter:
 - jargon: **architecture**, **parameters**, **labels**, **epoch**, **metric**, **loss**, **overfitting**, **hyperparameters**, ...
 - a first use of a convolutional neural network (**CNN**)
 - the use of **pretrained models** (and **fine-tuning**)
-- image recognition can be used for non-image tasks (for example spectograms for sound issues)
+- image recognition also useful for non-image tasks (for example spectograms for sound issues)
 
