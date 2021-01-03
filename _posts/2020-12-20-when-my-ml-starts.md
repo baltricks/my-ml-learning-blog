@@ -29,16 +29,18 @@ Each chapter of the book ends with a questionnaire which helps you checking your
 
 I enjoy it. It's very useful.
 
-Here are some topics:
+Some of the main topics I took from the first chapter:
 
 - the main areas of deep learning
-- a brief historical survey (from the first artificial neurons to **neuronal networks**)
+- from the first artificial neurons to **neuronal networks**
+- running the first notebook
 - **machine learning** as another way (other than writing a program) to let computers do their task - by learning from their experience (= **training**)
 - a first idea how training works
 - **predictions** coming from input data
 - different types of models like **classification** and **regression**
 - the meaning of input data and its division into different data sets like a **training set** used as training input, **validation set** (or development set) to measure the accuracy of a model and optional a separate **test set** to test a model with never seen data
-- a lot new terms like **epoch**, **metric**, **loss**, **overfitting** ...
+- jargon: **architecture**, **parameters**, **labels**, **epoch**, **metric**, **loss**, **overfitting** ...
+- a first use of a convolutional neural network (**CNN**)
 - the use of **pretrained models** (and **fine-tuning**)
-
+- image recognition can be used for non-image tasks (for example spectograms for sound issues)
 
