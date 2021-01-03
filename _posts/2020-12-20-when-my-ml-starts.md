@@ -5,6 +5,7 @@ toc: false
 layout: post
 categories: [fastai, Google Colab]
 comments: true
+image:images/DeepLearningForCodersBook.jpg
 
 ---
 
