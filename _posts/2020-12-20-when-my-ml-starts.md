@@ -39,7 +39,7 @@ Some of the main topics I took from the first chapter:
 - **predictions** coming from input data
 - different types of models like **classification** and **regression**
 - the meaning of input data and its division into different data sets like a **training set** used as training input, **validation set** (or development set) to measure the accuracy of a model and optional a separate **test set** to test a model with never seen data
-- jargon: **architecture**, **parameters**, **labels**, **epoch**, **metric**, **loss**, **overfitting** ...
+- jargon: **architecture**, **parameters**, **labels**, **epoch**, **metric**, **loss**, **overfitting**, **hyperparameters**, ...
 - a first use of a convolutional neural network (**CNN**)
 - the use of **pretrained models** (and **fine-tuning**)
 - image recognition can be used for non-image tasks (for example spectograms for sound issues)
