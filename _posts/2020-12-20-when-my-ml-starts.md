@@ -4,7 +4,6 @@ description: An exciting book - My coding environment -  What I've learned until
 toc: false
 layout: post
 categories: [fastai, Google Colab]
-image:images/DeepLearningForCodersBook.jpg
 comments: true
 
 ---
