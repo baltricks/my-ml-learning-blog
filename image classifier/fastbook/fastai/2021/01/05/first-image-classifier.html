@@ -8,15 +8,15 @@
 <meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="My first practice with an image classifier (using fastbook and fastai)" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Which problem to solve For my very first practice I followed the book I’m working with (Deep Learning for Coders with fastai and PyTorch: AI Applications Without a PhD by Jeremy Howard &amp; Sylvain Gugger) and choose the bear image classifier as my first objective." />
-<meta property="og:description" content="Which problem to solve For my very first practice I followed the book I’m working with (Deep Learning for Coders with fastai and PyTorch: AI Applications Without a PhD by Jeremy Howard &amp; Sylvain Gugger) and choose the bear image classifier as my first objective." />
+<meta name="description" content="Which problem to solve For my very first practice I followed the book (Deep Learning for Coders with fastai and PyTorch: AI Applications Without a PhD by Jeremy Howard &amp; Sylvain Gugger) and choose the bear image classifier as my first objective." />
+<meta property="og:description" content="Which problem to solve For my very first practice I followed the book (Deep Learning for Coders with fastai and PyTorch: AI Applications Without a PhD by Jeremy Howard &amp; Sylvain Gugger) and choose the bear image classifier as my first objective." />
 <link rel="canonical" href="https://baltricks.github.io/my-ml-learning-blog/image%20classifier/fastbook/fastai/2021/01/05/first-image-classifier.html" />
 <meta property="og:url" content="https://baltricks.github.io/my-ml-learning-blog/image%20classifier/fastbook/fastai/2021/01/05/first-image-classifier.html" />
 <meta property="og:site_name" content="My journey through machine learning" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-01-05T00:00:00-06:00" />
 <script type="application/ld+json">
-{"url":"https://baltricks.github.io/my-ml-learning-blog/image%20classifier/fastbook/fastai/2021/01/05/first-image-classifier.html","@type":"BlogPosting","headline":"My first practice with an image classifier (using fastbook and fastai)","dateModified":"2021-01-05T00:00:00-06:00","datePublished":"2021-01-05T00:00:00-06:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://baltricks.github.io/my-ml-learning-blog/image%20classifier/fastbook/fastai/2021/01/05/first-image-classifier.html"},"description":"Which problem to solve For my very first practice I followed the book I’m working with (Deep Learning for Coders with fastai and PyTorch: AI Applications Without a PhD by Jeremy Howard &amp; Sylvain Gugger) and choose the bear image classifier as my first objective.","@context":"https://schema.org"}</script>
+{"url":"https://baltricks.github.io/my-ml-learning-blog/image%20classifier/fastbook/fastai/2021/01/05/first-image-classifier.html","@type":"BlogPosting","headline":"My first practice with an image classifier (using fastbook and fastai)","dateModified":"2021-01-05T00:00:00-06:00","datePublished":"2021-01-05T00:00:00-06:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://baltricks.github.io/my-ml-learning-blog/image%20classifier/fastbook/fastai/2021/01/05/first-image-classifier.html"},"description":"Which problem to solve For my very first practice I followed the book (Deep Learning for Coders with fastai and PyTorch: AI Applications Without a PhD by Jeremy Howard &amp; Sylvain Gugger) and choose the bear image classifier as my first objective.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/my-ml-learning-blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://baltricks.github.io/my-ml-learning-blog/feed.xml" title="My journey through machine learning" /><link rel="shortcut icon" type="image/x-icon" href="/my-ml-learning-blog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -105,14 +105,14 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h1"><a href="#training-a-model">Training a model</a></li>
 </ul><h1 id="which-problem-to-solve">
 <a class="anchor" href="#which-problem-to-solve" aria-hidden="true"><span class="octicon octicon-link"></span></a>Which problem to solve</h1>
-<p>For my very first practice I followed the book I’m working with (<em>Deep Learning for Coders with fastai and PyTorch: AI Applications Without a PhD</em> by Jeremy Howard &amp; Sylvain Gugger) and choose the <strong>bear image classifier</strong> as my first objective.</p>
+<p>For my very first practice I followed the book (<em>Deep Learning for Coders with fastai and PyTorch: AI Applications Without a PhD</em> by Jeremy Howard &amp; Sylvain Gugger) and choose the <strong>bear image classifier</strong> as my first objective.</p>
 
-<p>Other ideas I had were image classifiers for birds or clouds.</p>
+<p>Other ideas I had were image classifiers for birds or trees.</p>
 
 <h1 id="the-input-data">
 <a class="anchor" href="#the-input-data" aria-hidden="true"><span class="octicon octicon-link"></span></a>The input data</h1>
 <p>I used the DuckDuckGo search engine to find proper images in 3 categories as input data and stored them in the subfolders ‘black’, ‘grizzly’ and ‘teddy’.
-Then I created a new notebook with Google Colab (stored in Google Drive) and set the runtime to GPU. I copied my input data into a data folder in my drive and checked the input path with:</p>
+Then I created a new notebook with Google Colab (stored in Google Drive) and set the runtime to GPU. I copied my input data into a data folder on my drive and checked the input path with:</p>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">!</span><span class="n">ls</span> <span class="n">drive</span><span class="o">/</span><span class="n">MyDrive</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">images</span><span class="o">/</span><span class="n">bears</span>
 </code></pre></div></div>
 <p>and after installing and setting up fastbook</p>
@@ -123,7 +123,7 @@ Then I created a new notebook with Google Colab (stored in Google Drive) and set
 <p>I also checked the mounted drive</p>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">!</span><span class="n">ls</span> <span class="n">gdrive</span><span class="o">/</span><span class="n">MyDrive</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">images</span><span class="o">/</span><span class="n">bears</span> 
 </code></pre></div></div>
-<p>and set my path variable and got the images with</p>
+<p>I set my path variable and got the images with</p>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">path</span> <span class="o">=</span> <span class="s">'gdrive/MyDrive/data/images/bears'</span>
 <span class="n">fns</span> <span class="o">=</span> <span class="n">get_image_files</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
 </code></pre></div></div>
