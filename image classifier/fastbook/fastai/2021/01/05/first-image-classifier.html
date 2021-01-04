@@ -77,7 +77,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      1 min read
+      2 min read
     
 </span></p>
 
@@ -103,6 +103,7 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h1"><a href="#which-problem-to-solve">Which problem to solve</a></li>
 <li class="toc-entry toc-h1"><a href="#the-input-data">The input data</a></li>
 <li class="toc-entry toc-h1"><a href="#training-a-model">Training a model</a></li>
+<li class="toc-entry toc-h1"><a href="#finishing-the-training">Finishing the training</a></li>
 </ul><h1 id="which-problem-to-solve">
 <a class="anchor" href="#which-problem-to-solve" aria-hidden="true"><span class="octicon octicon-link"></span></a>Which problem to solve</h1>
 <p>For my very first practice I followed the book (<em>Deep Learning for Coders with fastai and PyTorch: AI Applications Without a PhD</em> by Jeremy Howard &amp; Sylvain Gugger) and choose the <strong>bear image classifier</strong> as my first objective.</p>
@@ -135,15 +136,66 @@ Then I created a new notebook with Google Colab (stored in Google Drive) and set
 
 <h1 id="training-a-model">
 <a class="anchor" href="#training-a-model" aria-hidden="true"><span class="octicon octicon-link"></span></a>Training a model</h1>
-<p>First I loaded my input data:</p>
+<p>First I made some specifications about the input data of the training process:</p>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">bears</span> <span class="o">=</span> <span class="n">DataBlock</span><span class="p">(</span>
     <span class="n">blocks</span><span class="o">=</span><span class="p">(</span><span class="n">ImageBlock</span><span class="p">,</span> <span class="n">CategoryBlock</span><span class="p">),</span> 
     <span class="n">get_items</span><span class="o">=</span><span class="n">get_image_files</span><span class="p">,</span> 
     <span class="n">splitter</span><span class="o">=</span><span class="n">RandomSplitter</span><span class="p">(</span><span class="n">valid_pct</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">),</span>
     <span class="n">get_y</span><span class="o">=</span><span class="n">parent_label</span><span class="p">,</span>
     <span class="n">item_tfms</span><span class="o">=</span><span class="n">Resize</span><span class="p">(</span><span class="mi">128</span><span class="p">))</span>
+</code></pre></div></div>
+<p>This means that</p>
+<ul>
+  <li>predictions should be made from images (the independent variable) to categories (the dependent variable)</li>
+  <li>the items should be taken by the <em>get_image_files</em> function (which is taking a path as argument)</li>
+  <li>the data set should be splitted randomly into a training and validation set (20% of the data for the validation set; randomly, but always the same sets)</li>
+  <li>the labeling of the dependent variable (the categories, the y-value) should come from the folder name</li>
+  <li>and all items (images) should be transformed - here resized -to the same size of 128px</li>
+</ul>
+
+<p>Then I set the input path and got the DataLoaders:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dls</span> <span class="o">=</span> <span class="n">bears</span><span class="p">.</span><span class="n">dataloaders</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Before starting the training I played around with some transformations available for</p>
+<ul>
+  <li>images (resizing with different methods) and</li>
+  <li>batches of images (random image variations, the data augmentation)
+and watched the results printed with the <em>show_batch</em> function of the dataloaders.</li>
+</ul>
+
+<p>Then I followed the recommendation and made this settings:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">bears</span> <span class="o">=</span> <span class="n">bears</span><span class="p">.</span><span class="n">new</span><span class="p">(</span>
+    <span class="n">item_tfms</span><span class="o">=</span><span class="n">RandomResizedCrop</span><span class="p">(</span><span class="mi">224</span><span class="p">,</span> <span class="n">min_scale</span><span class="o">=</span><span class="mf">0.5</span><span class="p">),</span>
+    <span class="n">batch_tfms</span><span class="o">=</span><span class="n">aug_transforms</span><span class="p">())</span>
 <span class="n">dls</span> <span class="o">=</span> <span class="n">bears</span><span class="p">.</span><span class="n">dataloaders</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
 </code></pre></div></div>
+
+<p>Then I created the cnn learner and started the <strong>fine tuning</strong> with 4 epochs:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">learn</span> <span class="o">=</span> <span class="n">cnn_learner</span><span class="p">(</span><span class="n">dls</span><span class="p">,</span> <span class="n">resnet18</span><span class="p">,</span> <span class="n">metrics</span><span class="o">=</span><span class="n">error_rate</span><span class="p">)</span>
+<span class="n">learn</span><span class="p">.</span><span class="n">fine_tune</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>The next step was looking at the result and making some <strong>data cleaning</strong>. Therefor I used the <em>ClassificationInterpretation</em> from fastbook (to plot the <em>confusion matrix</em> and see the top losses) and the <em>ImageClassifierCleaner</em> from fastai to define which images should be deleted or moved to another category:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cleaner</span> <span class="o">=</span> <span class="n">ImageClassifierCleaner</span><span class="p">(</span><span class="n">learn</span><span class="p">)</span>
+<span class="n">cleaner</span>
+</code></pre></div></div>
+
+<p>Deleting or moving can then be done with:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">cleaner</span><span class="p">.</span><span class="n">delete</span><span class="p">():</span> <span class="n">cleaner</span><span class="p">.</span><span class="n">fns</span><span class="p">[</span><span class="n">idx</span><span class="p">].</span><span class="n">unlink</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">idx</span><span class="p">,</span><span class="n">cat</span> <span class="ow">in</span> <span class="n">cleaner</span><span class="p">.</span><span class="n">change</span><span class="p">():</span> <span class="n">shutil</span><span class="p">.</span><span class="n">move</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">cleaner</span><span class="p">.</span><span class="n">fns</span><span class="p">[</span><span class="n">idx</span><span class="p">]),</span> <span class="n">path</span><span class="o">/</span><span class="n">cat</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h1 id="finishing-the-training">
+<a class="anchor" href="#finishing-the-training" aria-hidden="true"><span class="octicon octicon-link"></span></a>Finishing the training</h1>
+<p>I repeated fine tuning and data cleaning until I got this result from fine tuning (that came with the 3. or 4. run):</p>
+
+<p><img src="/my-ml-learning-blog/images/chap2BearsFineTune.PNG" alt="" title="Result from fine tuning"></p>
+
+<p>Then I saved the model with the export function of the learner:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">learn</span><span class="p">.</span><span class="n">export</span><span class="p">()</span>
+</code></pre></div></div>
+<p>which created the model file <em>export.pkl</em></p>
 
 
   </div><!-- from https://github.com/utterance/utterances -->
