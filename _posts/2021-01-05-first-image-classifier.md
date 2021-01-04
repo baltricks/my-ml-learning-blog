@@ -1,7 +1,7 @@
 ---
 title: My first practice with an image classifier (using fastbook and fastai)
-description: description
-toc: false
+description: 
+toc: true
 layout: post
 categories: [Image Classifier, fastbook, fastai]
 comments: true
