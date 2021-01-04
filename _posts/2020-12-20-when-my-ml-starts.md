@@ -1,6 +1,6 @@
 ---
 title: When my ML learning began
-description: It started with a book - My coding environment -  What I learned
+description: It started with a book - My coding environment -  What I learned in this step
 toc: false
 layout: post
 categories: [fastai, Google Colab]
@@ -29,7 +29,7 @@ From the [books website](https://course.fast.ai/) you can start any of the books
 
 That's the way I started creating and running my very first notebooks. Then I rebuilt the first prepared samples (image classifier and others) coming with the book.
 
-# What I learned
+# What I learned in this step
 
 Each chapter of the book ends with a questionnaire which helps you checking your learning progress. 
 
