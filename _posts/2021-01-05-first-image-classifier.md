@@ -6,7 +6,7 @@ layout: post
 categories: [Image Classifier, fastbook, fastai]
 comments: true
 
-hide: false
+hide: true
 
 ---
 
