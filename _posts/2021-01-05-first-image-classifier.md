@@ -11,7 +11,8 @@ hide: false
 ---
 
 # Which problem to solve
-For my very first practice I followed the book I'm working with (*Deep Learning for Coders with fastai and PyTorch: AI Applications Without a PhD* by Jeremy Howard & Sylvain Gugger) and choose a bear image classifier as my first objective. 
+For my very first practice I followed the book I'm working with (*Deep Learning for Coders with fastai and PyTorch: AI Applications Without a PhD* by Jeremy Howard & Sylvain Gugger) and choose the **bear image classifier** as my first objective. 
+
 Other ideas I had were image classifiers for birds or clouds.
 
 # The input data
