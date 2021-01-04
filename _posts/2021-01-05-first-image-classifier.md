@@ -44,7 +44,7 @@ failed.map(Path.unlink)
 there were 495 images (in 3 categories) left.
 
 # Training a model
-First a loaded my input data:
+First I loaded my input data:
 ```python
 bears = DataBlock(
     blocks=(ImageBlock, CategoryBlock), 
