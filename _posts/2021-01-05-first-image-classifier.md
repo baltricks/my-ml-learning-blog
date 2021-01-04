@@ -11,13 +11,13 @@ hide: false
 ---
 
 # Which problem to solve
-For my very first practice I followed the book I'm working with (*Deep Learning for Coders with fastai and PyTorch: AI Applications Without a PhD* by Jeremy Howard & Sylvain Gugger) and choose the **bear image classifier** as my first objective. 
+For my very first practice I followed the book (*Deep Learning for Coders with fastai and PyTorch: AI Applications Without a PhD* by Jeremy Howard & Sylvain Gugger) and choose the **bear image classifier** as my first objective. 
 
-Other ideas I had were image classifiers for birds or clouds.
+Other ideas I had were image classifiers for birds or trees.
 
 # The input data
 I used the DuckDuckGo search engine to find proper images in 3 categories as input data and stored them in the subfolders 'black', 'grizzly' and 'teddy'.
-Then I created a new notebook with Google Colab (stored in Google Drive) and set the runtime to GPU. I copied my input data into a data folder in my drive and checked the input path with:
+Then I created a new notebook with Google Colab (stored in Google Drive) and set the runtime to GPU. I copied my input data into a data folder on my drive and checked the input path with:
 ```python
 !ls drive/MyDrive/data/images/bears
 ```
@@ -31,7 +31,7 @@ I also checked the mounted drive
 ```python
 !ls gdrive/MyDrive/data/images/bears 
 ```
-and set my path variable and got the images with
+I set my path variable and got the images with
 ```python
 path = 'gdrive/MyDrive/data/images/bears'
 fns = get_image_files(path)
