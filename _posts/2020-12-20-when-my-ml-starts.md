@@ -1,5 +1,5 @@
 ---
-title: How my ML learning began
+title: When my ML learning began
 description: It started with a book - My coding environment -  What I learned
 toc: false
 layout: post
