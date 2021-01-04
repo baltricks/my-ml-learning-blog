@@ -135,7 +135,7 @@ Then I created a new notebook with Google Colab (stored in Google Drive) and set
 
 <h1 id="training-a-model">
 <a class="anchor" href="#training-a-model" aria-hidden="true"><span class="octicon octicon-link"></span></a>Training a model</h1>
-<p>First a loaded my input data:</p>
+<p>First I loaded my input data:</p>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">bears</span> <span class="o">=</span> <span class="n">DataBlock</span><span class="p">(</span>
     <span class="n">blocks</span><span class="o">=</span><span class="p">(</span><span class="n">ImageBlock</span><span class="p">,</span> <span class="n">CategoryBlock</span><span class="p">),</span> 
     <span class="n">get_items</span><span class="o">=</span><span class="n">get_image_files</span><span class="p">,</span> 
