@@ -1,6 +1,6 @@
 ---
-title: When my ML learning starts
-description: An exciting book - My coding environment -  What I've learned until now
+title: How my ML learning began
+description: It started with a book - My coding environment -  What I learned
 toc: false
 layout: post
 categories: [fastai, Google Colab]
@@ -9,13 +9,13 @@ image: images/DeepLearningForCodersBookS4.jpg
 
 ---
 
-# An exciting book
+# It started with a book
 
 In late 2020 I came across *Deep Learning for Coders with fastai and PyTorch: AI Applications Without a PhD* by Jeremy Howard & Sylvain Gugger and I was directly inspired and excited to dive into deep learning. 
 
 ![]({{ site.baseurl }}/images/DeepLearningForCodersBookS4.jpg "Deep Learning for Coders with fastai and PyTorch")
 
-Deep Learning, Machine Learning, AI and all the other terms of artifical intelligence had been very unclear to me - even though I'd been working for many years as a software developer. But with this book I got the feeling that the door to this domain is now opened to me - by authors with long lasting experience in coding and teaching AI. 
+Deep Learning, Machine Learning, AI and all the other terms of artifical intelligence had been very unclear to me - even though I'd been working for many years as a software developer. But with this book the door to this domain was opened to me - by authors with long lasting experience in coding and teaching AI. 
 
 # My coding environment
 
@@ -29,7 +29,7 @@ From the [books website](https://course.fast.ai/) you can start any of the books
 
 That's the way I started creating and running my very first notebooks. Then I rebuilt the first prepared samples (image classifier and others) coming with the book.
 
-# What I've learned until now
+# What I learned
 
 Each chapter of the book ends with a questionnaire which helps you checking your learning progress. 
 
@@ -39,8 +39,8 @@ Some of the main topics I took from the first chapter:
 
 - the main areas of deep learning
 - from the first artificial neurons to **neuronal networks**
-- running the first notebook
-- **machine learning** as another way (other than writing a program) to let computers do their task - by learning from their experience (= **training**)
+- running the first notebook with Google Colab
+- understand **machine learning** as another way (other than writing a program) to let computers do their task - by learning from their experience (= **training**)
 - a first idea how training works
 - **predictions** coming from input data
 - different types of models like **classification** and **regression**
@@ -48,5 +48,5 @@ Some of the main topics I took from the first chapter:
 - jargon: **architecture**, **parameters**, **labels**, **epoch**, **metric**, **loss**, **overfitting**, **hyperparameters**, ...
 - a first use of a convolutional neural network (**CNN**)
 - the use of **pretrained models** (and **fine-tuning**)
-- image recognition also useful for non-image tasks (for example spectograms for sound issues)
+- image recognition usable for non-image tasks (for example spectograms for sound issues)
 
