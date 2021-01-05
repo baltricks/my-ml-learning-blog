@@ -10,13 +10,17 @@ comments: true
 
 # Why do I write this blog?
 
+One really good reason to write this blog is: it **improves my understanding** of what I'm doing and learning!
+
+But there is more:
+
 As a developer I often feel how important it is for me
 - to stay focused on my (or my companies) goals
-- to frequently recap what I've done and how succesful it was
+- to frequently recap what I've done or learned and how succesful it was
 - to see and remember the progress and not only what's missing
 - and to keep the balance between diving deeply into things on one side and reacting to upcoming needs on the other side
 
-So a great part of this work is just thinking and making decisions. And that's one reason to write this blog: **It should help me to keep myself on this road**.
+So a great part of this work is just thinking and making decisions. And that's another reason to write this blog: **It should help me to keep myself on this road**.
 
 And another important reason is my hope that this blog will **one day help others on their way**. Sharing content makes learning and development available for everybody. I benefit from this since years. 
 

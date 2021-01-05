@@ -5,6 +5,7 @@ toc: true
 layout: post
 categories: [Image Classifier, fastbook, fastai]
 comments: true
+image: /images/chap2BearsFineTune.PNG
 
 hide: true
 
@@ -13,9 +14,7 @@ hide: true
 # Which problem to solve
 For my very first practice I followed the book (*Deep Learning for Coders with fastai and PyTorch: AI Applications Without a PhD* by Jeremy Howard & Sylvain Gugger) and choose the **bear image classifier** as my first objective. 
 
-Other ideas I had were image classifiers for birds or trees.
-
-# The input data
+# Starting with the input data and Google Colab
 I used the DuckDuckGo search engine to find proper images in 3 categories as input data and stored them in the subfolders 'black', 'grizzly' and 'teddy'.
 Then I created a new notebook with Google Colab (stored in Google Drive) and set the runtime to GPU. I copied my input data into a data folder on my drive and checked the input path with:
 ```python
@@ -31,7 +30,16 @@ I also checked the mounted drive
 ```python
 !ls gdrive/MyDrive/data/images/bears 
 ```
-I set my path variable and got the images with
+Before continuing let me show the imports I finally needed in my training notebook:
+```python
+from fastbook import get_image_files, verify_images, Path, DataBlock, ImageBlock, CategoryBlock
+from fastbook import RandomSplitter, parent_label, Resize, ResizeMethod, RandomResizedCrop, aug_transforms
+from fastbook import cnn_learner, resnet18, error_rate, load_learner
+from fastbook import ClassificationInterpretation
+from fastai.vision.widgets import ImageClassifierCleaner, widgets, PILImage, VBox
+```
+
+Next step was to set my path variable and get the images with
 ```python
 path = 'gdrive/MyDrive/data/images/bears'
 fns = get_image_files(path)
@@ -60,7 +68,7 @@ This means that
 - the labeling of the dependent variable (the categories, the y-value) should come from the folder name
 - and all items (images) should be transformed - here resized -to the same size of 128px
 
-Then I set the input path and got the DataLoaders:
+Then I set the input path and got the data loaders:
 ```python
 dls = bears.dataloaders(path)
 ```
@@ -68,7 +76,7 @@ dls = bears.dataloaders(path)
 Before starting the training I played around with some transformations available for 
 - images (resizing with different methods) and
 - batches of images (random image variations, the data augmentation)
-and watched the results printed with the *show_batch* function of the dataloaders.
+and watched the results printed with the *show_batch* function of the dataloaders (*dls.train* for the training set and *dls.valid* for the validation set).
 
 Then I followed the recommendation and made this settings:
 ```python
@@ -78,9 +86,19 @@ bears = bears.new(
 dls = bears.dataloaders(path)
 ```
 
-Then I created the cnn learner and started the **fine tuning** with 4 epochs:
+I created the learner:
 ```python
 learn = cnn_learner(dls, resnet18, metrics=error_rate)
+```
+using:
+- a convolutional neural network (CNN)
+- the data loaders defined before
+- the *resnet18* as model architecture
+- the *error rate* as the metric for the quality (that's the error rate of the predictions made with the validation set)
+- a **pretrained model** (by default)
+
+and started the **fine tuning** of the pretrained model with 4 epochs:
+```python
 learn.fine_tune(4)
 ```
 
@@ -97,15 +115,15 @@ for idx,cat in cleaner.change(): shutil.move(str(cleaner.fns[idx]), path/cat)
 ```
 
 # Finishing the training
-I repeated fine tuning and data cleaning until I got this result from fine tuning (that came with the 3. or 4. run):
+I repeated fine tuning and data cleaning until I got this result from fine tuning (which came with the 3. or 4. run):
 
 ![]({{ site.baseurl }}/images/chap2BearsFineTune.PNG "Result from fine tuning")
 
-Then I saved the model with the export function of the learner:
+Then I saved the model (**architecture** and **parameters**) with the export function of the learner:
 ```python
 learn.export()
 ```
-which created the model file *export.pkl*
+which creates the model file *export.pkl* (this file even includes information about the dataloaders). Then I downloaded and renamed it for local use.
 
 
 
