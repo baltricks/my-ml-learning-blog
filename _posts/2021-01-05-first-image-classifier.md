@@ -3,7 +3,7 @@ title: My first practice with an image classifier (using fastbook and fastai), P
 description: Which problem to solve until Finishing the training
 toc: true
 layout: post
-categories: [Image Classifier, fastbook, fastai, training]
+categories: [Image Classifier, fastbook, fastai, Google Colab, Training]
 comments: true
 image: /images/chap2BearsFineTune.PNG
 
