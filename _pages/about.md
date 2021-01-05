@@ -14,7 +14,7 @@ I started my professional life with coding in C and C++. Then I changed to Java 
 
 Today I am responsible for Desktop Applications written in Java/JavaFX and Backend and Frontend Systems running with Node.js, Express and VueJS.
 
-As a mum I am working part time. I am a fan of life long learning and just started with machine learning and Python in my free time.
+Since I became a mum (many years ago) I am working part time. I am a fan of life long learning and just started with machine learning and Python in my free time.
 
 <br/>
 <br/>
