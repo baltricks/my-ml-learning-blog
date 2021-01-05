@@ -1,5 +1,5 @@
 ---
-title: My first practice with an image classifier (using fastbook and fastai)
+title: My first practice with an image classifier (using fastbook and fastai), Part I
 description: 
 toc: true
 layout: post
@@ -7,7 +7,7 @@ categories: [Image Classifier, fastbook, fastai]
 comments: true
 image: /images/chap2BearsFineTune.PNG
 
-hide: true
+hide: false
 
 ---
 
@@ -39,7 +39,7 @@ from fastbook import ClassificationInterpretation
 from fastai.vision.widgets import ImageClassifierCleaner, widgets, PILImage, VBox
 ```
 
-Next step was to set my path variable and get the images with
+Next step was to set my path variable and get the images
 ```python
 path = 'gdrive/MyDrive/data/images/bears'
 fns = get_image_files(path)
