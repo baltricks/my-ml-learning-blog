@@ -8,7 +8,7 @@ Hi,
 
 my name is Heike and I am a full stack software developer.
 
-I studied computer science in Kiel, Germany and made my degree in the 90's. Since that time I mainly worked as a developer in several companies. I touched the areas of logistics, consulting, telecommunication, medicine and currently meteorology.
+I studied computer science in Kiel, Germany and made my degree in the 90's. Since that time I worked as a developer in several companies. I touched the areas of logistics, consulting, telecommunication, medicine and currently meteorology.
 
 I started my professional life with coding in C and C++. Then I changed to Java and in the last 2 years also to JavaScript.
 
