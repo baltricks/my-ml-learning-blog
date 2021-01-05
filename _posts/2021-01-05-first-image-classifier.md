@@ -1,9 +1,9 @@
 ---
 title: My first practice with an image classifier (using fastbook and fastai), Part I
-description: 
+description: Which problem to solve until Finishing the training
 toc: true
 layout: post
-categories: [Image Classifier, fastbook, fastai]
+categories: [Image Classifier, fastbook, fastai, training]
 comments: true
 image: /images/chap2BearsFineTune.PNG
 
