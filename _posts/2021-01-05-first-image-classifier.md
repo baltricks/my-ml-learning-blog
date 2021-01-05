@@ -66,7 +66,7 @@ This means that
 - the items should be taken by the *get_image_files* function (which is taking a path as argument)
 - the data set should be splitted randomly into a training and validation set (20% of the data for the validation set; randomly, but always the same sets)
 - the labeling of the dependent variable (the categories, the y-value) should come from the folder name
-- and all items (images) should be transformed - here resized -to the same size of 128px
+- and all items (images) should be transformed - here resized - to the same size of 128px
 
 Then I set the input path and got the data loaders:
 ```python
@@ -123,7 +123,7 @@ Then I saved the model (**architecture** and **parameters**) with the export fun
 ```python
 learn.export()
 ```
-which creates the model file *export.pkl* (this file even includes information about the dataloaders). Then I downloaded and renamed it for local use.
+which creates the model file *export.pkl* (this file even includes information about the dataloaders). I downloaded and renamed it for local use.
 
 
 
