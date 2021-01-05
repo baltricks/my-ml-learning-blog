@@ -157,7 +157,7 @@ Then I created a new notebook with Google Colab (stored in Google Drive) and set
   <li>the items should be taken by the <em>get_image_files</em> function (which is taking a path as argument)</li>
   <li>the data set should be splitted randomly into a training and validation set (20% of the data for the validation set; randomly, but always the same sets)</li>
   <li>the labeling of the dependent variable (the categories, the y-value) should come from the folder name</li>
-  <li>and all items (images) should be transformed - here resized -to the same size of 128px</li>
+  <li>and all items (images) should be transformed - here resized - to the same size of 128px</li>
 </ul>
 
 <p>Then I set the input path and got the data loaders:</p>
@@ -213,7 +213,7 @@ and watched the results printed with the <em>show_batch</em> function of the dat
 <p>Then I saved the model (<strong>architecture</strong> and <strong>parameters</strong>) with the export function of the learner:</p>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">learn</span><span class="p">.</span><span class="n">export</span><span class="p">()</span>
 </code></pre></div></div>
-<p>which creates the model file <em>export.pkl</em> (this file even includes information about the dataloaders). Then I downloaded and renamed it for local use.</p>
+<p>which creates the model file <em>export.pkl</em> (this file even includes information about the dataloaders). I downloaded and renamed it for local use.</p>
 
 
   </div><!-- from https://github.com/utterance/utterances -->
