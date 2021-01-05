@@ -13,10 +13,11 @@
 <link rel="canonical" href="https://baltricks.github.io/my-ml-learning-blog/image%20classifier/fastbook/fastai/2021/01/05/first-image-classifier.html" />
 <meta property="og:url" content="https://baltricks.github.io/my-ml-learning-blog/image%20classifier/fastbook/fastai/2021/01/05/first-image-classifier.html" />
 <meta property="og:site_name" content="My journey through machine learning" />
+<meta property="og:image" content="https://baltricks.github.io/my-ml-learning-blog/images/chap2BearsFineTune.PNG" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-01-05T00:00:00-06:00" />
 <script type="application/ld+json">
-{"url":"https://baltricks.github.io/my-ml-learning-blog/image%20classifier/fastbook/fastai/2021/01/05/first-image-classifier.html","@type":"BlogPosting","headline":"My first practice with an image classifier (using fastbook and fastai)","dateModified":"2021-01-05T00:00:00-06:00","datePublished":"2021-01-05T00:00:00-06:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://baltricks.github.io/my-ml-learning-blog/image%20classifier/fastbook/fastai/2021/01/05/first-image-classifier.html"},"description":"Which problem to solve For my very first practice I followed the book (Deep Learning for Coders with fastai and PyTorch: AI Applications Without a PhD by Jeremy Howard &amp; Sylvain Gugger) and choose the bear image classifier as my first objective.","@context":"https://schema.org"}</script>
+{"url":"https://baltricks.github.io/my-ml-learning-blog/image%20classifier/fastbook/fastai/2021/01/05/first-image-classifier.html","@type":"BlogPosting","headline":"My first practice with an image classifier (using fastbook and fastai)","dateModified":"2021-01-05T00:00:00-06:00","datePublished":"2021-01-05T00:00:00-06:00","image":"https://baltricks.github.io/my-ml-learning-blog/images/chap2BearsFineTune.PNG","mainEntityOfPage":{"@type":"WebPage","@id":"https://baltricks.github.io/my-ml-learning-blog/image%20classifier/fastbook/fastai/2021/01/05/first-image-classifier.html"},"description":"Which problem to solve For my very first practice I followed the book (Deep Learning for Coders with fastai and PyTorch: AI Applications Without a PhD by Jeremy Howard &amp; Sylvain Gugger) and choose the bear image classifier as my first objective.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/my-ml-learning-blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://baltricks.github.io/my-ml-learning-blog/feed.xml" title="My journey through machine learning" /><link rel="shortcut icon" type="image/x-icon" href="/my-ml-learning-blog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -77,7 +78,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      2 min read
+      3 min read
     
 </span></p>
 
@@ -101,17 +102,15 @@ window.onload = wrap_img;
   <div class="post-content e-content" itemprop="articleBody">
     <ul class="section-nav">
 <li class="toc-entry toc-h1"><a href="#which-problem-to-solve">Which problem to solve</a></li>
-<li class="toc-entry toc-h1"><a href="#the-input-data">The input data</a></li>
+<li class="toc-entry toc-h1"><a href="#starting-with-the-input-data-and-google-colab">Starting with the input data and Google Colab</a></li>
 <li class="toc-entry toc-h1"><a href="#training-a-model">Training a model</a></li>
 <li class="toc-entry toc-h1"><a href="#finishing-the-training">Finishing the training</a></li>
 </ul><h1 id="which-problem-to-solve">
 <a class="anchor" href="#which-problem-to-solve" aria-hidden="true"><span class="octicon octicon-link"></span></a>Which problem to solve</h1>
 <p>For my very first practice I followed the book (<em>Deep Learning for Coders with fastai and PyTorch: AI Applications Without a PhD</em> by Jeremy Howard &amp; Sylvain Gugger) and choose the <strong>bear image classifier</strong> as my first objective.</p>
 
-<p>Other ideas I had were image classifiers for birds or trees.</p>
-
-<h1 id="the-input-data">
-<a class="anchor" href="#the-input-data" aria-hidden="true"><span class="octicon octicon-link"></span></a>The input data</h1>
+<h1 id="starting-with-the-input-data-and-google-colab">
+<a class="anchor" href="#starting-with-the-input-data-and-google-colab" aria-hidden="true"><span class="octicon octicon-link"></span></a>Starting with the input data and Google Colab</h1>
 <p>I used the DuckDuckGo search engine to find proper images in 3 categories as input data and stored them in the subfolders ‘black’, ‘grizzly’ and ‘teddy’.
 Then I created a new notebook with Google Colab (stored in Google Drive) and set the runtime to GPU. I copied my input data into a data folder on my drive and checked the input path with:</p>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">!</span><span class="n">ls</span> <span class="n">drive</span><span class="o">/</span><span class="n">MyDrive</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">images</span><span class="o">/</span><span class="n">bears</span>
@@ -124,7 +123,15 @@ Then I created a new notebook with Google Colab (stored in Google Drive) and set
 <p>I also checked the mounted drive</p>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">!</span><span class="n">ls</span> <span class="n">gdrive</span><span class="o">/</span><span class="n">MyDrive</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">images</span><span class="o">/</span><span class="n">bears</span> 
 </code></pre></div></div>
-<p>I set my path variable and got the images with</p>
+<p>Before continuing let me show the imports I finally needed in my training notebook:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">fastbook</span> <span class="kn">import</span> <span class="n">get_image_files</span><span class="p">,</span> <span class="n">verify_images</span><span class="p">,</span> <span class="n">Path</span><span class="p">,</span> <span class="n">DataBlock</span><span class="p">,</span> <span class="n">ImageBlock</span><span class="p">,</span> <span class="n">CategoryBlock</span>
+<span class="kn">from</span> <span class="nn">fastbook</span> <span class="kn">import</span> <span class="n">RandomSplitter</span><span class="p">,</span> <span class="n">parent_label</span><span class="p">,</span> <span class="n">Resize</span><span class="p">,</span> <span class="n">ResizeMethod</span><span class="p">,</span> <span class="n">RandomResizedCrop</span><span class="p">,</span> <span class="n">aug_transforms</span>
+<span class="kn">from</span> <span class="nn">fastbook</span> <span class="kn">import</span> <span class="n">cnn_learner</span><span class="p">,</span> <span class="n">resnet18</span><span class="p">,</span> <span class="n">error_rate</span><span class="p">,</span> <span class="n">load_learner</span>
+<span class="kn">from</span> <span class="nn">fastbook</span> <span class="kn">import</span> <span class="n">ClassificationInterpretation</span>
+<span class="kn">from</span> <span class="nn">fastai.vision.widgets</span> <span class="kn">import</span> <span class="n">ImageClassifierCleaner</span><span class="p">,</span> <span class="n">widgets</span><span class="p">,</span> <span class="n">PILImage</span><span class="p">,</span> <span class="n">VBox</span>
+</code></pre></div></div>
+
+<p>Next step was to set my path variable and get the images with</p>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">path</span> <span class="o">=</span> <span class="s">'gdrive/MyDrive/data/images/bears'</span>
 <span class="n">fns</span> <span class="o">=</span> <span class="n">get_image_files</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
 </code></pre></div></div>
@@ -153,7 +160,7 @@ Then I created a new notebook with Google Colab (stored in Google Drive) and set
   <li>and all items (images) should be transformed - here resized -to the same size of 128px</li>
 </ul>
 
-<p>Then I set the input path and got the DataLoaders:</p>
+<p>Then I set the input path and got the data loaders:</p>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dls</span> <span class="o">=</span> <span class="n">bears</span><span class="p">.</span><span class="n">dataloaders</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
 </code></pre></div></div>
 
@@ -161,7 +168,7 @@ Then I created a new notebook with Google Colab (stored in Google Drive) and set
 <ul>
   <li>images (resizing with different methods) and</li>
   <li>batches of images (random image variations, the data augmentation)
-and watched the results printed with the <em>show_batch</em> function of the dataloaders.</li>
+and watched the results printed with the <em>show_batch</em> function of the dataloaders (<em>dls.train</em> for the training set and <em>dls.valid</em> for the validation set).</li>
 </ul>
 
 <p>Then I followed the recommendation and made this settings:</p>
@@ -171,9 +178,20 @@ and watched the results printed with the <em>show_batch</em> function of the dat
 <span class="n">dls</span> <span class="o">=</span> <span class="n">bears</span><span class="p">.</span><span class="n">dataloaders</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>Then I created the cnn learner and started the <strong>fine tuning</strong> with 4 epochs:</p>
+<p>I created the learner:</p>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">learn</span> <span class="o">=</span> <span class="n">cnn_learner</span><span class="p">(</span><span class="n">dls</span><span class="p">,</span> <span class="n">resnet18</span><span class="p">,</span> <span class="n">metrics</span><span class="o">=</span><span class="n">error_rate</span><span class="p">)</span>
-<span class="n">learn</span><span class="p">.</span><span class="n">fine_tune</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</code></pre></div></div>
+<p>using:</p>
+<ul>
+  <li>a convolutional neural network (CNN)</li>
+  <li>the data loaders defined before</li>
+  <li>the <em>resnet18</em> as model architecture</li>
+  <li>the <em>error rate</em> as the metric for the quality (that’s the error rate of the predictions made with the validation set)</li>
+  <li>a <strong>pretrained model</strong> (by default)</li>
+</ul>
+
+<p>and started the <strong>fine tuning</strong> of the pretrained model with 4 epochs:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">learn</span><span class="p">.</span><span class="n">fine_tune</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>The next step was looking at the result and making some <strong>data cleaning</strong>. Therefor I used the <em>ClassificationInterpretation</em> from fastbook (to plot the <em>confusion matrix</em> and see the top losses) and the <em>ImageClassifierCleaner</em> from fastai to define which images should be deleted or moved to another category:</p>
@@ -188,14 +206,14 @@ and watched the results printed with the <em>show_batch</em> function of the dat
 
 <h1 id="finishing-the-training">
 <a class="anchor" href="#finishing-the-training" aria-hidden="true"><span class="octicon octicon-link"></span></a>Finishing the training</h1>
-<p>I repeated fine tuning and data cleaning until I got this result from fine tuning (that came with the 3. or 4. run):</p>
+<p>I repeated fine tuning and data cleaning until I got this result from fine tuning (which came with the 3. or 4. run):</p>
 
 <p><img src="/my-ml-learning-blog/images/chap2BearsFineTune.PNG" alt="" title="Result from fine tuning"></p>
 
-<p>Then I saved the model with the export function of the learner:</p>
+<p>Then I saved the model (<strong>architecture</strong> and <strong>parameters</strong>) with the export function of the learner:</p>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">learn</span><span class="p">.</span><span class="n">export</span><span class="p">()</span>
 </code></pre></div></div>
-<p>which created the model file <em>export.pkl</em></p>
+<p>which creates the model file <em>export.pkl</em> (this file even includes information about the dataloaders). Then I downloaded and renamed it for local use.</p>
 
 
   </div><!-- from https://github.com/utterance/utterances -->
