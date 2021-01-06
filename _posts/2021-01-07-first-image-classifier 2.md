@@ -5,7 +5,7 @@ toc: true
 layout: post
 categories: [Image Classifier, fastbook, fastai, Inference, Gui]
 comments: true
-image: /images/prediction-bear-black.PNG
+image: /images/chap2Prediction-bear-black.PNG
 
 hide: false
 
@@ -51,7 +51,7 @@ Then I copied all the neccesary code for inference from the training notebook an
 
 And now the gui works. I can upload images and get the classification (also showing its probability)!
 
-![]({{ site.baseurl }}/images/prediction-bear-black.PNG "Gui running in a notebook")
+![]({{ site.baseurl }}/images/chap2Prediction-bear-black.PNG "Gui running in a notebook")
 
 
 
