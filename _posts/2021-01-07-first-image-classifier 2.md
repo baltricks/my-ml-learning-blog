@@ -22,7 +22,7 @@ and built a new learner (the **inference** learner) from the model file:
 ```python
 learn_inf = load_learner(thisPath/'export.pkl')
 ```
-I made some single image predictions with
+I made some single image predictions like
 ```python
 learn_inf.predict(path + '/grizzly/' + '193_bear-1.jpg')
 ```
@@ -30,12 +30,12 @@ and got the categories of the model:
 ```python
 learn_inf.dls.vocab
 ```
-# Building a little gui for predictions
+# Building a gui
 The next step was to built a little gui - runnable in Jupyter Notebooks - to upload images and make predictions about their class (category).
 
 Following the approach from the book (*Deep Learning for Coders with fastai and PyTorch: AI Applications Without a PhD* by Jeremy Howard & Sylvain Gugger) I could built this gui using the *IPython widgets*.
 
-But I was still working within my training notebook on Google Colab. What I really wanted was a separate notebook without all this training stuff: Just my self-trained model and some widgets and actions to get predictions from test images.
+But I was still working within my training notebook on Google Colab. What I really wanted was a separate notebook without all this training stuff: just my self-trained model and some widgets and actions to get predictions from test images.
 
 # Running on a local notebook
 In the meantime I had installed Anaconda on my local computer and started some Python lessons within local Jupyter Notebooks (I am a coder but a Python newbie). So it was nearby to install the missing packages (fastai and PyTorch) and go on with my prediction gui on my local computer.
