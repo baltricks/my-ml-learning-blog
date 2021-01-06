@@ -35,19 +35,21 @@ The next step was to built a little gui - runnable in Jupyter Notebooks - to upl
 
 Following the approach from the book (*Deep Learning for Coders with fastai and PyTorch: AI Applications Without a PhD* by Jeremy Howard & Sylvain Gugger) I could built this gui using the *IPython widgets*.
 
-But I was still working within my training notebook on Google Colab. What I really wanted was a separate notebook without all this training stuff: Just my self-trained model and some widgets and actions to get predictions for test images.
+But I was still working within my training notebook on Google Colab. What I really wanted was a separate notebook without all this training stuff: Just my self-trained model and some widgets and actions to get predictions from test images.
 
 # Running on a local notebook
-In the meantime I had installed Anaconda on my local computer and started some Python lessons within local Jupyter Notebooks (I am a coder but a Python newbie). So it was nearby to install the missing packages (fastai and PyTorch) and go on with my prediction gui.
+In the meantime I had installed Anaconda on my local computer and started some Python lessons within local Jupyter Notebooks (I am a coder but a Python newbie). So it was nearby to install the missing packages (fastai and PyTorch) and go on with my prediction gui on my local computer.
 
 But I ran very soon into dependency issues. Finally this does the trick:
 - I used the Anaconda Navigator to add a new environment and named it 'fastai'.
 - I added the *fastai* and *pytorch* channels
 - and installed the *pytorch*, *fastai* and *fastbook* packages
 
-Now I can run my fastai notebooks in this environment [^1].
+Now I can run notebooks using fastai in this environment [^1].
 
-And the gui works:
+Then I copied all the neccesary code for inference from the training notebook and created a new local notebook for my gui.
+
+And now the gui works. I can upload images and get the classification (also showing its probability)!
 
 ![]({{ site.baseurl }}/images/prediction-bear-black.PNG "Gui running in a notebook")
 
