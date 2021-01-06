@@ -108,7 +108,7 @@ window.onload = wrap_img;
   <div class="post-content e-content" itemprop="articleBody">
     <ul class="section-nav">
 <li class="toc-entry toc-h1"><a href="#making-predictions-from-the-model">Making predictions from the model</a></li>
-<li class="toc-entry toc-h1"><a href="#building-a-little-gui-for-predictions">Building a little gui for predictions</a></li>
+<li class="toc-entry toc-h1"><a href="#building-a-gui">Building a gui</a></li>
 <li class="toc-entry toc-h1"><a href="#running-on-a-local-notebook">Running on a local notebook</a></li>
 </ul><h1 id="making-predictions-from-the-model">
 <a class="anchor" href="#making-predictions-from-the-model" aria-hidden="true"><span class="octicon octicon-link"></span></a>Making predictions from the model</h1>
@@ -120,19 +120,19 @@ I checked the file with</p>
 <p>and built a new learner (the <strong>inference</strong> learner) from the model file:</p>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">learn_inf</span> <span class="o">=</span> <span class="n">load_learner</span><span class="p">(</span><span class="n">thisPath</span><span class="o">/</span><span class="s">'export.pkl'</span><span class="p">)</span>
 </code></pre></div></div>
-<p>I made some single image predictions with</p>
+<p>I made some single image predictions like</p>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">learn_inf</span><span class="p">.</span><span class="n">predict</span><span class="p">(</span><span class="n">path</span> <span class="o">+</span> <span class="s">'/grizzly/'</span> <span class="o">+</span> <span class="s">'193_bear-1.jpg'</span><span class="p">)</span>
 </code></pre></div></div>
 <p>and got the categories of the model:</p>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">learn_inf</span><span class="p">.</span><span class="n">dls</span><span class="p">.</span><span class="n">vocab</span>
 </code></pre></div></div>
-<h1 id="building-a-little-gui-for-predictions">
-<a class="anchor" href="#building-a-little-gui-for-predictions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Building a little gui for predictions</h1>
+<h1 id="building-a-gui">
+<a class="anchor" href="#building-a-gui" aria-hidden="true"><span class="octicon octicon-link"></span></a>Building a gui</h1>
 <p>The next step was to built a little gui - runnable in Jupyter Notebooks - to upload images and make predictions about their class (category).</p>
 
 <p>Following the approach from the book (<em>Deep Learning for Coders with fastai and PyTorch: AI Applications Without a PhD</em> by Jeremy Howard &amp; Sylvain Gugger) I could built this gui using the <em>IPython widgets</em>.</p>
 
-<p>But I was still working within my training notebook on Google Colab. What I really wanted was a separate notebook without all this training stuff: Just my self-trained model and some widgets and actions to get predictions from test images.</p>
+<p>But I was still working within my training notebook on Google Colab. What I really wanted was a separate notebook without all this training stuff: just my self-trained model and some widgets and actions to get predictions from test images.</p>
 
 <h1 id="running-on-a-local-notebook">
 <a class="anchor" href="#running-on-a-local-notebook" aria-hidden="true"><span class="octicon octicon-link"></span></a>Running on a local notebook</h1>
