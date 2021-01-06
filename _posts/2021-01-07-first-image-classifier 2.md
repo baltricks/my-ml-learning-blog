@@ -5,7 +5,7 @@ toc: true
 layout: post
 categories: [Image Classifier, fastbook, fastai, Inference, Gui]
 comments: true
-image: /images/chap2Prediction-bear-black.PNG
+image: /images/chap2Prediction-bear-black-small.PNG
 
 hide: false
 
