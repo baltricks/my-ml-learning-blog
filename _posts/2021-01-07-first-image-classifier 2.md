@@ -12,7 +12,7 @@ hide: false
 ---
 
 # Making predictions from the model
-After exporting the model I wanted to make some predictions from the model. At first I did it in the training notebook on Google Colab to see how it works.
+After training and exporting the model I wanted to make some predictions with the model. At first I did it in the training notebook on Google Colab to see how it works.
 I checked the file with
 ```python
 thisPath = Path()
@@ -24,9 +24,9 @@ learn_inf = load_learner(thisPath/'export.pkl')
 ```
 I made some single image predictions like
 ```python
-learn_inf.predict(path + '/grizzly/' + '193_bear-1.jpg')
+learn_inf.predict(path + '/grizzly/' + 'bear1.jpg')
 ```
-and got the categories of the model:
+and got the categories of the model with:
 ```python
 learn_inf.dls.vocab
 ```
@@ -35,9 +35,9 @@ The next step was to built a little gui - runnable in Jupyter Notebooks - to upl
 
 Following the approach from the book (*Deep Learning for Coders with fastai and PyTorch: AI Applications Without a PhD* by Jeremy Howard & Sylvain Gugger) I could built this gui using the *IPython widgets*.
 
-But I was still working within my training notebook on Google Colab. What I really wanted was a separate notebook without all this training stuff: just my self-trained model and some widgets and actions to get predictions from test images.
+But I was still working within my training notebook on Google Colab. What I really wanted was a separate notebook without all this training stuff: just my self-trained model and some widgets and actions to get predictions with test images.
 
-# Running on a local notebook
+# Inference in a separate notebook
 In the meantime I had installed Anaconda on my local computer and started some Python lessons within local Jupyter Notebooks (I am a coder but a Python newbie). So it was nearby to install the missing packages (fastai and PyTorch) and go on with my prediction gui on my local computer.
 
 But I ran very soon into dependency issues. Finally this does the trick:
@@ -47,7 +47,7 @@ But I ran very soon into dependency issues. Finally this does the trick:
 
 Now I can run notebooks using fastai in this environment [^1].
 
-Then I copied all the neccesary code for inference from the training notebook and created a new local notebook for my gui.
+Then I copied all the neccesary code for inference from the training notebook and created a new local notebook for my gui. I also made a copy of the model file accessible to this new notebook. 
 
 And now the gui works. I can upload images and get the classification (also showing its probability)!
 
