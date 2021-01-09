@@ -38,9 +38,13 @@ When I began to fill my first post with content I changed the process. Previousl
 
 # Changing to fastpages
 
-Some days later when I had built my first model I began thinking about publishing my note book code or models. I made some experience with [Binder](https://mybinder.org/) and learned how to start a *jupyter notebook* with *Binder* (Binder lets you run docker images built from jupyter notebooks). Here is an example (don't worry, it takes some moments when building and launching the image):
+Some days later when I had built my first model I began thinking about publishing also code or models. I made some experience with [Binder](https://mybinder.org/) and learned how to start a *jupyter notebook* with *Binder* (*Binder* lets you run *docker images* built from *jupyter notebooks*). Here is a simple example (don't worry, it takes some moments when building and launching the image):
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/baltricks/my-ml-learning-blog/HEAD?filepath=others%2Fsay-hello.ipynb)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/baltricks/my-ml-learning-blog/HEAD?filepath=others%2Fsay-hello-world.ipynb)
+
+And finally I read about [fastpage](https://github.com/fastai/fastpages), a platform that brings blogging and running *jupyter notebooks* together: It supports *jupyter notebooks* as blog posts! **So you can write a blog post together with runnable code in a *jupyter notebook* and integrate a button to start the post / notebook itself with binder!**
+
+
 
 
 
