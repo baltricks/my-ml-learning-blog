@@ -40,8 +40,7 @@ When I began to fill my first post with content I changed the process. Previousl
 
 Some days later when I had built my first model I began thinking about publishing my note book code or models. I made some experience with [Binder](https://mybinder.org/) and learned how to start a *jupyter notebook* with *Binder* (Binder lets you run docker images built from jupyter notebooks). Here is an example (don't worry, it takes some moments when building and launching the image):
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/baltricks/my-ml-learning-blog/HEAD?filepath=_notebooks%2F2021-01-06-say-hello.ipynb)
 
-2021-01-06-say-hello
 
 
