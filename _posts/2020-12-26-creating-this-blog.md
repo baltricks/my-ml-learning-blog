@@ -1,6 +1,6 @@
 ---
 title: Creating this blog
-description: Why do I write this blog? - A GitHub Page for my blog
+description: Why do I write this blog? - A GitHub Page for my blog - Changing to fastpages
 toc: false
 layout: post
 categories: [GitHub Page]
@@ -34,5 +34,14 @@ In this repository I created a directory structure for my future posts and made 
 
 So I could create my first post (*\*.md*) and reference it in my home page of the blog (*index.md*). The posts are written in the markdown syntax of the GitHub platform. You can find a short markdown guide [here](https://guides.github.com/features/mastering-markdown/).
 
-When I began to fill my first post with content I changed my procedure. Before that moment I did all editing via browser in the GitHub web site. But then I changed to my local computer: I used my *Git Bash* to clone the repository and made my editing locally with *Visual Studio Code*. There is a very nice extension called *Markdown All in One* which helps you writing pages in the markdown syntax. Now - when ready for publishing - I only have to push my content to the origin repository. The page updates automatically.
+When I began to fill my first post with content I changed the process. Previously I did all editing via browser in the GitHub web site. But then I changed to my local computer: I used my *Git Bash* (I'm working on Windows) to clone the repository and made my editing locally with *Visual Studio Code*. There is a very nice extension called *Markdown All in One* which helps you writing pages in the markdown syntax. Now - when ready for publishing - I only have to push my content to the origin repository. The page updates automatically.
+
+# Changing to fastpages
+
+Some days later when I had built my first model I began thinking about publishing my note book code or models. I made some experience with [Binder](https://mybinder.org/) and learned how to start a *jupyter notebook* with *Binder* (Binder lets you run docker images built from jupyter notebooks). Here is an example (don't worry, it takes some moments when building and launching the image):
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/)
+
+2021-01-06-say-hello
+
 
