@@ -95,8 +95,6 @@
   
 
   
-
-  
   
 
   
@@ -116,7 +114,7 @@
   
 
   
-      ,"page11": {
+      ,"page10": {
           "title": "",
           "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
           "url": "https://baltricks.github.io/my-ml-learning-blog/robots.txt",
