@@ -44,7 +44,31 @@ Some days later when I had built my first model I began thinking about publishin
 
 And finally I read about [fastpage](https://github.com/fastai/fastpages), a platform that brings blogging and running *jupyter notebooks* together: It supports *jupyter notebooks* as blog posts! **So you can write a blog post together with runnable code in a *jupyter notebook* and integrate a button to start the post / notebook itself on a platform like Binder!**
 
+These were the main steps I took to migrate my blog to *fastpage*:
 
+- First I followed the [instructions](https://github.com/fastai/fastpages#setup-instructions) to setup my new page
+- I customized the page in:
+  - _config.yml (social links, title, description, show_image)
+  - _pages/about.md (about me)
+  - index.html
+  - _includes/footer.html (copied from the origin minima theme, removed the RSS subscription link)
+- Migrating my posts:
+  - copied my former posts into the _posts folder of the new page
+  - changed the names according to the naming convention
+  - added following tags:
+    - toc: true / false
+    - layout: post
+    - categories: [...] 
+    - optional image
+  - removed the initial posts
+- Enabled comments for github users:
+  - installed the utterances app via https://github.com/apps/utterances (for single repos)
+  - set 'coments: true' for all posts
 
+So my page gots also the following features coming with *fastpage*:
 
+- a search page
+- a tags page showing the contents and categories 
+- pagination in the index page
+- comments enabled in the posts pages
 
