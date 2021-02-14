@@ -134,6 +134,50 @@ window.onload = wrap_img;
 
 <p>And finally I read about <a href="https://github.com/fastai/fastpages">fastpage</a>, a platform that brings blogging and running <em>jupyter notebooks</em> together: It supports <em>jupyter notebooks</em> as blog posts! <strong>So you can write a blog post together with runnable code in a <em>jupyter notebook</em> and integrate a button to start the post / notebook itself on a platform like Binder!</strong></p>
 
+<p>These were the main steps I took to migrate my blog to <em>fastpage</em>:</p>
+
+<ul>
+  <li>First I followed the <a href="https://github.com/fastai/fastpages#setup-instructions">instructions</a> to setup my new page</li>
+  <li>I customized the page in:
+    <ul>
+      <li>_config.yml (social links, title, description, show_image)</li>
+      <li>_pages/about.md (about me)</li>
+      <li>index.html</li>
+      <li>_includes/footer.html (copied from the origin minima theme, removed the RSS subscription link)</li>
+    </ul>
+  </li>
+  <li>Migrating my posts:
+    <ul>
+      <li>copied my former posts into the _posts folder of the new page</li>
+      <li>changed the names according to the naming convention</li>
+      <li>added following tags:
+        <ul>
+          <li>toc: true / false</li>
+          <li>layout: post</li>
+          <li>categories: […]</li>
+          <li>optional image</li>
+        </ul>
+      </li>
+      <li>removed the initial posts</li>
+    </ul>
+  </li>
+  <li>Enabled comments for github users:
+    <ul>
+      <li>installed the utterances app via https://github.com/apps/utterances (for single repos)</li>
+      <li>set ‘coments: true’ for all posts</li>
+    </ul>
+  </li>
+</ul>
+
+<p>So my page gots also the following features coming with <em>fastpage</em>:</p>
+
+<ul>
+  <li>a search page</li>
+  <li>a tags page showing the contents and categories</li>
+  <li>pagination in the index page</li>
+  <li>comments enabled in the posts pages</li>
+</ul>
+
 
   </div><!-- from https://github.com/utterance/utterances -->
 <script src="https://utteranc.es/client.js"
