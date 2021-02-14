@@ -62,7 +62,7 @@ These were the main steps I took to migrate my blog to *fastpage*:
     - optional image
   - removed the initial posts
 - Enabled comments for github users:
-  - installed the utterances app via https://github.com/apps/utterances (for single repos)
+  - enabled the utterances app https://github.com/apps/utterances (see instructions [here](https://github.com/fastai/fastpages#enabling-comments))
   - set 'coments: true' for all posts
 
 So my page gots also the following features coming with *fastpage*:
@@ -70,5 +70,5 @@ So my page gots also the following features coming with *fastpage*:
 - a search page
 - a tags page showing the contents and categories 
 - pagination in the index page
-- comments enabled in the posts pages
+- comments enabled in my posts
 
