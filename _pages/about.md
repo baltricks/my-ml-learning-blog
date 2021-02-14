@@ -12,7 +12,7 @@ I studied computer science in Kiel, Germany and made my degree in the 90's. Sinc
 
 I started my professional life with coding in C and C++. Then I changed to Java and in the last 2 years also to JavaScript.
 
-Today I am responsible for desktop applications written in Java/JavaFX and backend and frontend Systems running with Node.js, Express and VueJS.
+Today I am responsible for desktop applications written in Java/JavaFX and backend and frontend systems running with Node.js, Express and VueJS.
 
 Since I became a mum (many years ago) I am working part time. I am a fan of life long learning and just started with machine learning and Python in my free time.
 
